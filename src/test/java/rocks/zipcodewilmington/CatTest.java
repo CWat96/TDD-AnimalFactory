@@ -61,13 +61,33 @@ public class CatTest {
     @Test
     public void testEat() {
         //Given
-        String name = "Zula";
-        Date birthDate = new Date();
-        Integer id = 2525;
+        String name = "Zula"; //create cat name
+        Date birthDate = new Date(); // gave the cat a birthdate
+        Integer id = 2525; // gave the cat an id
+        Cat cat = new Cat(name, birthDate, id); // created a new cat and implemented its attributes
+        Food food = new Food(); // created new food for the cat
+        // When
+        Integer Expected = 1; // when its time for the cat to eat it will increase its food +1
+        cat.eat(food); // the cat eats the food
+        Integer numberOfMealsEaten = cat.getNumberOfMealsEaten(); // the number of meals is = to cat gets +1 number of meals
+        // Then
+        Assert.assertEquals(Expected, numberOfMealsEaten); // compare what you expect in "when' to numberofmealseaten
     }
 
-
         // TODO - Create tests for `Integer getId()`
+    @Test
+    public void testId() {
+        //Given
+        String name = "Zula"; // create cat name
+        Date birthDate = new Date(); // giving the cat a birthdate
+        Integer id = 2525; // giving the cat an id
+        Cat cat = new Cat(name, birthDate, id);
+        //When
+        Integer Expected = 2525; // expected ID number that was previously initialized
+        cat.getId(); // ge the cats ID
+        //Then
+        //Assert.assertEquals();
+    }
         // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
         // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
     }
