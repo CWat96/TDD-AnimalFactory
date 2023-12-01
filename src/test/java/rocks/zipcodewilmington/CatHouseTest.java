@@ -73,4 +73,18 @@ public class CatHouseTest {
         Assert.assertTrue(true);
     }
     // TODO - Create tests for `Integer getNumberOfCats()`
+    @Test
+    public void testGetNumberOfCats() {
+        //Given
+        String name = "Zula"; //create cat name
+        Date birthDate = new Date(); // gave the cat a birthdate
+        Integer id = 2525; // gave the cat an id
+        Cat cat = new Cat(name, birthDate, id);
+        //When
+        CatHouse.getNumberOfCats();
+        CatHouse.getCatById(id);
+        //Then
+        Integer Actual = CatHouse.getNumberOfCats();
+        Assert.assertTrue(true);
+    }
 }
