@@ -5,8 +5,11 @@ import org.junit.Test;
 import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Dog;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.util.Date;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author leon on 4/19/18.
@@ -82,6 +85,16 @@ public class DogTest {
         System.out.println(Dog instanceof Animal); // test if cat is an instance of Animal
     }
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
+    @Test
+    public void testInstanceOfMammal() {
+        //Given
+        String name = ""; // create dog name
+        Date birthDate = new Date(); // giving the dog a birthdate
+        Integer id = 2323; // giving the dog an id
+        Dog dog = new Dog(name, birthDate, id); // create new dog with attributes
+        //Then
+        assertTrue(dog instanceof Mammal);
+    }
     // TODO - Create tests for `new Dog(String name, Date birthDate, Integer id)`
     @Test
     public void setNameTest() {
