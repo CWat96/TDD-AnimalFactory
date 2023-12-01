@@ -16,7 +16,7 @@ import java.util.Date;
 public class DogHouseTest {
     // TODO - Create tests for `void add(Dog dog)`
     @Test
-    public void testAddCat() {
+    public void testAddDog() {
         //Given
         String name = "Milo";
         Date birthDate = new Date();
@@ -45,7 +45,35 @@ public class DogHouseTest {
         Assert.assertTrue(true);
     }
     // TODO - Create tests for `void remove(Dog dog)`
+    @Test
+    public void testRemoveDog() {
+        //Given
+        String name = "Milo";
+        Date birthDate = new Date();
+        Integer id = 2323;
+        Dog dog = new Dog(name, birthDate, id);
+        //When
+        DogHouse.add(dog);
+        DogHouse.remove(dog);
+        //Then
+        int numberOfDogs = DogHouse.getNumberOfDogs();
+        Assert.assertEquals(3, numberOfDogs);
+    }
     // TODO - Create tests for `Dog getDogById(Integer id)`
+    @Test
+    public void testDogById() {
+        //Given
+        String name = "Milo";
+        Date birthDate = new Date();
+        Integer id = 2323;
+        Dog dog = new Dog(name, birthDate, id);
+        //When
+        DogHouse.add(dog);
+        DogHouse.getDogById(id);
+        //Then
+        Dog retrieveId = DogHouse.getDogById(id);
+        Assert.assertTrue(true);
+    }
     // TODO - Create tests for `Integer getNumberOfDogs()`
 
     @Test
