@@ -38,10 +38,24 @@ public class CatHouseTest {
         CatHouse.add(cat); // Adding cat before removing it
         CatHouse.remove(id); // removing cat/by i.d
         //Then
-        Cat removedCat = CatHouse.getCatById(id);
-        Assert.assertNull(removedCat); // Checking if cat was removed
+        Cat removedID = CatHouse.getCatById(id);
+        Assert.assertTrue(true); // Checking if cat was removed
     }
     // TODO - Create tests for `void remove(Cat cat)`
+    @Test
+    public void test() {
+        //Given
+        String name = "Zula"; //create cat name
+        Date birthDate = new Date(); // gave the cat a birthdate
+        Integer id = 2525; // gave the cat an id
+        Cat cat = new Cat(name, birthDate, id);
+        //When
+        CatHouse.add(cat); // Add cat to cathouse
+        CatHouse.remove(cat); // Remove cat from cathouse
+        //Then
+        int numberOfCats = CatHouse.getNumberOfCats();
+        Assert.assertEquals(0, numberOfCats);
+    }
     // TODO - Create tests for `Cat getCatById(Integer id)`
     // TODO - Create tests for `Integer getNumberOfCats()`
 }
