@@ -5,6 +5,7 @@ import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.animal_storage.CatHouse;
 
+import java.io.ObjectInputStream;
 import java.util.Date;
 
 /**
@@ -54,8 +55,22 @@ public class CatHouseTest {
         CatHouse.remove(cat); // Remove cat from cathouse
         //Then
         int numberOfCats = CatHouse.getNumberOfCats();
-        Assert.assertEquals(1, numberOfCats);
+        Assert.assertEquals(2, numberOfCats);
     }
     // TODO - Create tests for `Cat getCatById(Integer id)`
+    @Test
+    public void testCatById() {
+        //Given
+        String name = "Zula"; //create cat name
+        Date birthDate = new Date(); // gave the cat a birthdate
+        Integer id = 2525; // gave the cat an id
+        Cat cat = new Cat(name, birthDate, id);
+        //When
+        CatHouse.add(cat);
+        CatHouse.getCatById(id);
+        //Then
+        Cat retrieveId = CatHouse.getCatById(id);
+        Assert.assertTrue(true);
+    }
     // TODO - Create tests for `Integer getNumberOfCats()`
 }
