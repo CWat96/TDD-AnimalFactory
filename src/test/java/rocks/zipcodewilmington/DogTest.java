@@ -58,6 +58,20 @@ public class DogTest {
         Assert.assertEquals(Expected, numberOfMealsEaten); // compare what you expect in "when' to numberofmealseaten
     }
     // TODO - Create tests for `Integer getId()`
+    @Test
+    public void testId() {
+        //Given
+        String name = ""; // create dog name
+        Date birthDate = new Date(); // giving the dog a birthdate
+        Integer id = 2323; // giving the dog an id
+        Dog dog = new Dog(name, birthDate, id); // create new dog with attributes
+        //When
+        Integer Expected = 2323; // expected ID number that was previously initialized
+        dog.getId(); // get the dog ID
+        id = dog.getId();
+        //Then
+        Assert.assertEquals(Expected, id);
+    }
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
     // TODO - Create tests for `new Dog(String name, Date birthDate, Integer id)`
