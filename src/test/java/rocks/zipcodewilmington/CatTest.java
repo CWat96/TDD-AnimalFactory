@@ -2,8 +2,10 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
 
+import java.sql.SQLOutput;
 import java.util.Date;
 
 /**
@@ -81,14 +83,21 @@ public class CatTest {
         String name = "Zula"; // create cat name
         Date birthDate = new Date(); // giving the cat a birthdate
         Integer id = 2525; // giving the cat an id
-        Cat cat = new Cat(name, birthDate, id);
+        Cat cat = new Cat(name, birthDate, id); // create new cat with attributes
         //When
         Integer Expected = 2525; // expected ID number that was previously initialized
-        cat.getId(); // ge the cats ID
+        cat.getId(); // get the cats ID
+        id = cat.getId();
         //Then
-        //Assert.assertEquals();
+        Assert.assertEquals(Expected, id);
     }
         // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
+    @Test
+    public void testInstanceOfAnimal() {
+        //Given
+        CatTest Cat = new CatTest();
+        System.out.println(Cat instanceof Animal);
+    }
         // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
     }
 
