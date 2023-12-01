@@ -2,6 +2,7 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.Dog;
 
@@ -73,6 +74,13 @@ public class DogTest {
         Assert.assertEquals(Expected, id);
     }
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
+    @Test
+    public void testInstanceOfAnimal() {
+        //Given
+        DogTest Dog = new DogTest(); // create new dogTest
+        //Then
+        System.out.println(Dog instanceof Animal); // test if cat is an instance of Animal
+    }
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
     // TODO - Create tests for `new Dog(String name, Date birthDate, Integer id)`
     @Test
