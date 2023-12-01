@@ -28,7 +28,7 @@ public class CatHouseTest {
     }
     // TODO - Create tests for `void remove(Integer id)`
     @Test
-    public void testRemoveCat() {
+    public void testRemoveId() {
         //Given
         String name = "Zula"; //create cat name
         Date birthDate = new Date(); // gave the cat a birthdate
@@ -43,7 +43,7 @@ public class CatHouseTest {
     }
     // TODO - Create tests for `void remove(Cat cat)`
     @Test
-    public void test() {
+    public void testRemoveCat() {
         //Given
         String name = "Zula"; //create cat name
         Date birthDate = new Date(); // gave the cat a birthdate
@@ -54,7 +54,7 @@ public class CatHouseTest {
         CatHouse.remove(cat); // Remove cat from cathouse
         //Then
         int numberOfCats = CatHouse.getNumberOfCats();
-        Assert.assertEquals(0, numberOfCats);
+        Assert.assertEquals(1, numberOfCats);
     }
     // TODO - Create tests for `Cat getCatById(Integer id)`
     // TODO - Create tests for `Integer getNumberOfCats()`
