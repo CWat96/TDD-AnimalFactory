@@ -4,9 +4,12 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import java.sql.SQLOutput;
 import java.util.Date;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author leon on 4/19/18.
@@ -95,10 +98,21 @@ public class CatTest {
     @Test
     public void testInstanceOfAnimal() {
         //Given
-        CatTest Cat = new CatTest();
-        System.out.println(Cat instanceof Animal);
+        CatTest Cat = new CatTest(); // create new cat
+        //Then
+        System.out.println(Cat instanceof Animal); // test if cat is an instance of Animal
     }
         // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
+    @Test
+    public void testInstanceOfMammal() {
+        //Given
+        String name = "Zula"; // create cat name
+        Date birthDate = new Date(); // giving the cat a birthdate
+        Integer id = 2525; // giving the cat an id
+        Cat cat = new Cat(name, birthDate, id); // create new cat with attributes
+        //Then
+        assertTrue(cat instanceof Mammal);
+    }
     }
 
 //    @Test
